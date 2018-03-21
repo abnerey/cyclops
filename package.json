@@ -1,0 +1,67 @@
+{
+  "name": "cyclops",
+  "version": "0.0.1",
+  "description": "A multi-language live reloading/recompiling editor for desktops.",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abnerey/cyclops.git"
+  },
+  "scripts": {
+    "preinstall": "npm prune",
+    "prestart": "npm install && npm run compile",
+    "compile": "npm run cleanup && cross-env NODE_ENV=development webpack",
+    "cleanup": "rimraf dist",
+    "start": "npm run electron",
+    "electron": "electron ."
+  },
+  "dependencies": {
+    "react": "~16.2.0",
+    "react-dom": "~16.2.0",
+    "codemirror": "~5.34.0",
+    "language-command": "~1.0.0",
+    "language-detect-spawn": "~1.0.0",
+    "language-exec": "~1.0.0",
+    "node-pty": "~0.7.4"
+  },
+  "devDependencies": {
+    "@types/node": "~9.4.0",
+    "@types/react": "~16.0.35",
+    "cross-env": "^5.1.4",
+    "electron": "~1.7.8",
+    "rimraf": "~2.6.2",
+    "source-map-loader": "^0.2.3",
+    "ts-loader": "^3.4.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.1",
+    "webpack": "^3.10.0"
+  },
+  "keywords": [
+    "editor",
+    "live",
+    "reloading",
+    "electron",
+    "desktop",
+    "scratches",
+    "scratch",
+    "visual",
+    "studio",
+    "sublime",
+    "text",
+    "recompiling",
+    "gedit",
+    "linux",
+    "mac",
+    "macos",
+    "X",
+    "windows",
+    "multi",
+    "platform"
+  ],
+  "author": "Abner Juarez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abnerey/cyclops/issues"
+  },
+  "homepage": "https://github.com/abnerey/cyclops#readme"
+}
