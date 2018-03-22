@@ -18,7 +18,7 @@ function createWindow () {
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   // Discomment to open the console on startup
-  // mainWindow.toggleDevTools();
+  mainWindow.toggleDevTools();
 
   // Open the DevTools: mainWindow.webContents.openDevTools()
   mainWindow.on('closed', function () {

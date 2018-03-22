@@ -1,18 +1,30 @@
 import * as React from 'react';
+import {EditorComponent} from '../editor/EditorComponent';
 
-export interface ApplicationState {title: string; }
+export interface ApplicationState {}
 
-export class ApplicationComponent extends React.Component<ApplicationState, {}> {
-    props: ApplicationState;
-
+export class ApplicationComponent extends React.Component<{}, ApplicationState> {
     constructor(props) {
         super(props);
-        this.props = props;
     }
 
+    editorDidMount(editor, monaco) {
+        console.log('editorDidMount', editor);
+        editor.focus();
+      }
+      onChange(newValue, e) {
+        console.log('onChange', newValue, e);
+      }
+
     render() {
+        const code = 'hello world';
+        const options = {
+            selectOnLineNumbers: true
+        }
         return(
-            <h1>Hello {this.props.title}</h1>
+            <div>
+                <EditorComponent/>
+            </div>
         );
     }
 }
