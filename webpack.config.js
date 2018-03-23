@@ -2,7 +2,8 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: [
-        "./app/index.tsx"
+        "./app/index.tsx",
+        "./app/assets/fontawesome-loader.ts"
     ],
     output: {
         filename: "./dist/bundle.js",

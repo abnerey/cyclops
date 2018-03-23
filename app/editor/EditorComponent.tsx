@@ -10,7 +10,7 @@ export class EditorComponent extends React.Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'console.log("hello world;")'
+      value: ''
     };
   }
 

@@ -1,14 +1,32 @@
 const electron = require('electron');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
+const {app, BrowserWindow} = electron;
 
 const path = require('path');
 const url = require('url');
 
+function windowBounds() {
+  const workAreaSize = electron.screen.getPrimaryDisplay().workAreaSize;
+  return {
+    width: workAreaSize.width - 500,
+    height: workAreaSize.height - 300
+  }
+}
+
 let mainWindow;
 
 function createWindow () {
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  const bounds = windowBounds();
+  let options = {
+    webPreferences: {
+      experimentalFeatures: true,
+      experimentalCanvasFeatures: true
+    },
+    minWidth: 800,
+    minHeigth: 500,
+    width: bounds.width,
+    height: bounds.height
+  }
+  mainWindow = new BrowserWindow(options);
 
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
@@ -18,7 +36,7 @@ function createWindow () {
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   // Discomment to open the console on startup
-  mainWindow.toggleDevTools();
+  //mainWindow.toggleDevTools();
 
   // Open the DevTools: mainWindow.webContents.openDevTools()
   mainWindow.on('closed', function () {
