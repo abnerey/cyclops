@@ -19,6 +19,7 @@
     "@fortawesome/fontawesome": "^1.1.4",
     "@fortawesome/fontawesome-free-solid": "^5.0.8",
     "bulma": "^0.6.2",
+    "bulmaswatch": "^0.6.2",
     "codemirror": "~5.34.0",
     "language-command": "~1.0.0",
     "language-detect-spawn": "~1.0.0",
