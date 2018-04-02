@@ -5,3 +5,7 @@
 @import '~bulmaswatch/darkly/_overrides.scss';
 @import "~bulma/sass/utilities/_all";
 // $tabs-border-bottom-color: filter-gradient(#00d9b8, #00d977, horizontal);
+
+.CodeMirror {
+    font-size: 15px;
+}

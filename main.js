@@ -7,8 +7,8 @@ const url = require('url');
 function windowBounds() {
   const workAreaSize = electron.screen.getPrimaryDisplay().workAreaSize;
   return {
-    width: workAreaSize.width - 500,
-    height: workAreaSize.height - 300
+    width: workAreaSize.width,
+    height: workAreaSize.height
   }
 }
 
